@@ -17,7 +17,7 @@ app.use('/', express.static(path.join(__dirname, '../dist/vinayone/browser')));
 app.use('/api', apiRoute);
 
 // Create port
-const port = process.env.PORT || 4003;
+const port = process.env.PORT || 4002;
 const server = app.listen(port, () => {
   console.log('Connected to port ' + port)
 })
