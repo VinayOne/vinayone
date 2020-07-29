@@ -31,4 +31,10 @@
   .main-panel .main-content{
     margin-top: 21px;
   }
+  .mobile-title{
+    font-size: 2rem;
+  }
+  .mobile-category{
+    font-size: 1.7rem;
+  }
 }
