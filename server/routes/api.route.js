@@ -1,10 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const apiRoute = express.Router();
 
 //Mailjet Keys
 const MJ_APIKEY_PUBLIC='77e6a56444b50c0566f3553ad62e1c32';
 const MJ_APIKEY_PRIVATE='0d97efcfd728db13f5ca5aa7caef6514';
+
+app.use(cors());
 
 
 // Add Employee
