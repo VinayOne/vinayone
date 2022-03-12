@@ -7,17 +7,10 @@ const apiRoute = express.Router();
 const MJ_APIKEY_PUBLIC='77e6a56444b50c0566f3553ad62e1c32';
 const MJ_APIKEY_PRIVATE='0d97efcfd728db13f5ca5aa7caef6514';
 
-// Add Access Control Allow Origin headers
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
-  });
-
-app.use(cors());
+app.use(
+    cors({
+    origin: "*"
+}));
 
 
 // Add Employee

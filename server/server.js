@@ -1,6 +1,5 @@
 let express = require('express'),
    path = require('path'),
-   cors = require('cors'),
    bodyParser = require('body-parser');
   
 // Setting up port with express js
@@ -11,7 +10,6 @@ app.use(bodyParser.urlencoded({
    extended: false
 }));
 
-app.use(cors()); 
 app.use(express.static(path.join(__dirname, '../dist/vinayone/browser')));
 app.use('/', express.static(path.join(__dirname, '../dist/vinayone/browser')));
 app.use('/api', apiRoute);
