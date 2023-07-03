@@ -41,8 +41,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# Source Files
-/src
 
 # Server node_modules
 /server/node_modules

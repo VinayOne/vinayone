@@ -1,0 +1,48 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">        
+          <div class="col-md-8">
+              <div class="card card-profile">
+                  <div class="card-avatar">
+                      <a href="javascript:void(0)">
+                          <img class="img" src="./assets/img/faces/vinayone.jpg" />
+                      </a>
+                  </div>
+                  <div class="card-body">
+                      <h2 class="card-category text-gray mobile-category">MEAN Stack | Software Developer</h2>
+                      <h1 class="card-title mobile-title">Vinay Kumar Munda</h1>
+                      <p class="card-discription">
+                        Vinay is having 11+ years of experience in Web Application Development. He worked for various multinational companies like Cisco, Philips & Sapient etc. Vinay works with HTML5, CSS3, JavaScript ES6+, Angular, Node.js, MongoDB, Bootstrap & Angular Material Components. Vinay is having good command in development of various web applications whether static or dynamic, simple or complex or enterprise level applications.
+                      </p>
+                      <a class="btn btn-primary" [routerLink]="['/contact']">Contact</a>
+                      <a href="https://www.fiverr.com/vinayone_india" target="_blank" class="btn btn-primary">Fiverr Profile</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+              <img src="../../assets/img/linkedIn-badge.png" class="img-fluid" alt="Responsive image">
+                  <h3><strong>Vinay Kumar Munda</strong></h3>
+                  <h4>Mean Stack Developer</h4>
+                  <button type="button" class="btn btn-linkedIn" (click)="getlinkedInProfile()">View profile</button><br />
+                  <img src="../../assets/img/linkedin-logo.png" style="width:99px; margin:0 auto 20px auto">
+              </div> 
+          </div>
+          </div>
+      </div>
+	  <div class="row">
+			<div class="col-md-8">&nbsp;</div>
+			<div class="col-md-4">
+				<!-- <div class="card">
+              <div class="card-body">
+				 Put this code anywhere in the body of your page where you want the badge to show up. 
+
+			<div [innerHTML]="fiverr_profile"></div>
+
+			  </div> 
+			  </div> -->
+			</div>
+	  </div>
+  </div>
+</div>

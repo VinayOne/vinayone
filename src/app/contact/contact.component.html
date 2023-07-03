@@ -1,0 +1,68 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Contact Vinay</h4>
+                        <p class="card-category">Send a project requirement or your feedback.</p>
+                    </div>
+                    <div class="card-body">
+                        <form novalidate [formGroup]="contactForm" id="contact-form" (ngSubmit)="onSubmit()">                           
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Name" formControlName="name" type="text">
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Contact Number" formControlName="contactnumber" type="tel">
+                                  </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Email" formControlName="email" type="email">
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <mat-select placeholder="How you found me? (Select one)" formControlName="howfoundme">
+                                      <mat-option *ngFor="let opt of options" value="{{opt}}">{{opt}}</mat-option>                                      
+                                    </mat-select>
+                                  </mat-form-field>
+                                </div>
+                            </div>                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                     <div class="form-group">  
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating"> Your Query or Feedback</label>
+                                            <textarea class="form-control" rows="5" formControlName="feedback"></textarea>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            <span class="text-primary">Email: info@vinayone.com | Phone: +91 936 936 0606</span>
+                            <button mat-raised-button type="submit" class="btn btn-primary pull-right" [disabled]="contactForm.invalid">Send</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body text-center">
+                  <img src="../../assets/img/fiverr-profile.png" class="img-fluid" alt="Responsive image">
+                  <h3><strong>Seller</strong></h3>
+                  <h4>Programming & Tech</h4>
+                  <button type="button" mat-raised-button class="btn btn-fiverr" (click)="getFiverrProfile()">Check out my Gigs</button>                  
+                </div>
+              </div>
+            </div>
+        </div>        
+    </div>
+</div>
+
