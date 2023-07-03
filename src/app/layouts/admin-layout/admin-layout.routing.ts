@@ -53,7 +53,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'vinay-profile',   component: UserProfileComponent },
     { path: 'skills',      component: SkillsComponent },
     { path: 'experience',     component: ExperienceComponent },
-    { path: 'project-demos',     component: DemosComponent },
+    { path: 'projects',     component: DemosComponent },
     { path: 'javascript-algorithms',     component: JavascriptAlgorithmsComponent },
     { path: 'contact',        component: ContactComponent },
 ];

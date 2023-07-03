@@ -11,7 +11,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/vinay-profile', title: 'Profile',  icon:'double_arrow', class: '' },
     { path: '/skills', title: 'Skills',  icon: 'double_arrow', class: '' },
     { path: '/experience', title: 'Experience',  icon:'double_arrow', class: '' },
-    { path: '/project-demos', title: 'Project Demo',  icon:'double_arrow', class: '' },
+    { path: '/projects', title: 'Projects',  icon:'double_arrow', class: '' },
     { path: '/javascript-algorithms', title: 'JavaScript Algos',  icon:'double_arrow', class: '' },
     { path: '/contact', title: 'Query / Contact',  icon:'contact_support', class: 'active-pro' },
 ];
