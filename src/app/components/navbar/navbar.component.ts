@@ -2,7 +2,6 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
-import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-navbar',
@@ -19,10 +18,10 @@ export class NavbarComponent implements OnInit {
     newsData: any = [];
     window_width = $(window).width();
 
-    constructor(location: Location,  private element: ElementRef, private router: Router, private apiService: ApiService) {
+    constructor(location: Location,  private element: ElementRef, private router: Router) {
       this.location = location;
           this.sidebarVisible = false;
-          this.readNews();
+        //   this.readNews();
     }
 
     ngOnInit(){
@@ -39,14 +38,14 @@ export class NavbarComponent implements OnInit {
      });
     }
 
-    readNews(){
-        this.apiService.getNews().subscribe((data) => {
-         this.headlines = data;
-        for(let i=0; i<this.headlines.articles.length; i++){
-                this.newsData.push(this.headlines.articles[i].title)
-        }
-        })    
-      };
+    // readNews(){
+    //     this.apiService.getNews().subscribe((data) => {
+    //      this.headlines = data;
+    //     for(let i=0; i<this.headlines.articles.length; i++){
+    //             this.newsData.push(this.headlines.articles[i].title)
+    //     }
+    //     })    
+    //   };
 
     sidebarOpen() {
         const toggleButton = this.toggleButton;
