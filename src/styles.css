@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+::-moz-selection { /* Code for Firefox */
+    background: #9c27b0;
+  }
+  
+  ::selection {
+    background: #9c27b0;
+  }
