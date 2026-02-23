@@ -25,6 +25,7 @@
 !.vscode/extensions.json
 
 # misc
+/.angular/cache
 /.sass-cache
 /connect.lock
 /coverage
@@ -44,3 +45,10 @@ Thumbs.db
 
 # Server node_modules
 /server/node_modules
+
+# environment files
+.env
+.env.*
+server/.env
+server/.env.*
+!*.env.example

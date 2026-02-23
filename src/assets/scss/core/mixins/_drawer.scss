@@ -1,3 +1,4 @@
+@use "sass:string";
 // Mixins to allow creation of additional custom drawer sizes when using the defaults at the same time
 
 @mixin bmd-drawer-x-out($size) {
@@ -119,7 +120,7 @@
   $name: bmd-drawer-breakpoint-name($breakpoint, "-up");
 
   .bmd-drawer-in {
-    #{unquote($name)} {
+    #{string.unquote($name)} {
       // bmd-drawer-in, bmd-drawer-in-sm, bmd-drawer-in-md, bmd-drawer-in-lg
 
       @if $breakpoint == xs {
@@ -142,7 +143,7 @@
   $name: bmd-drawer-breakpoint-name($breakpoint, "-up");
 
   .bmd-drawer-in {
-    #{unquote($name)} {
+    #{string.unquote($name)} {
       // bmd-drawer-in, bmd-drawer-in-sm, bmd-drawer-in-md, bmd-drawer-in-lg
 
       @if $breakpoint == xs {
@@ -201,7 +202,7 @@
   $name: bmd-drawer-breakpoint-name($breakpoint, "-down");
 
   .bmd-drawer-overlay {
-    #{unquote($name)} {
+    #{string.unquote($name)} {
       // bmd-drawer-overlay, bmd-drawer-overlay-sm, bmd-drawer-overlay-md, bmd-drawer-overlay-lg
 
       // x - left/right
@@ -230,7 +231,7 @@
   $name: bmd-drawer-breakpoint-name($breakpoint, "-down");
 
   .bmd-drawer-overlay {
-    #{unquote($name)} {
+    #{string.unquote($name)} {
       // bmd-drawer-overlay, bmd-drawer-overlay-sm, bmd-drawer-overlay-md, bmd-drawer-overlay-lg
       //// y - top/bottom
 

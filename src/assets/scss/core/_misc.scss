@@ -1,3 +1,5 @@
+@use "sass:color";
+
 body{
     background-color: #eee;
     color: $black-color;
@@ -25,13 +27,13 @@ a{
   color: $link-color;
   &:hover,
   &:focus{
-      color: darken($link-color, 5%);
+      color: color.adjust($link-color, $lightness: -5%, $space: hsl);
       text-decoration: none;
   }
 
   &.text-info{
       &:hover, &:focus{
-          color: darken($brand-info, 5%);
+          color: color.adjust($brand-info, $lightness: -5%, $space: hsl);
       }
   }
 

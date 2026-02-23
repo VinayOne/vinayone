@@ -1,32 +1,46 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-const app = express();
 const apiRoute = express.Router();
 
-app.use(
-    cors({
-    origin: "*"
-}));
+apiRoute.use(
+  cors({
+    origin: '*'
+  })
+);
 
-let transporter = nodemailer.createTransport({
-    host: "in-v3.mailjet.com",
-    port: 587,
-    secure: false, // use TLS
-    auth: {
-      user: "77e6a56444b50c0566f3553ad62e1c32",
-      pass: "92149bc982866de5f94075411b29024c",
-    },
-  });
+const transporter = nodemailer.createTransport({
+  host: process.env.RESEND_SMTP_HOST || 'smtp.resend.com',
+  port: Number(process.env.RESEND_SMTP_PORT || 465),
+  secure: String(process.env.RESEND_SMTP_SECURE || 'true') === 'true',
+  auth: {
+    user: process.env.RESEND_SMTP_USER || 'resend',
+    pass: process.env.RESEND_API_KEY || ''
+  }
+});
 
 apiRoute.route('/mail').post((req, res, next) => {
-    transporter.sendMail({
-        from: "info@vinayone.com",
-        to: "inbox@vinayone.com",
-        subject: "VINAYONE CONTACT MAIL!",
-        html: `<h3>Hi Vinay,</h3><h2>You\'ve New Contact Mail!</h2><br /><p>From: ${req.body.name}<br />Contact Number: ${req.body.contactnumber}<br />Email: ${req.body.email}<br />How found me?: ${req.body.howfoundme}<br />Message: ${req.body.feedback}</p>`
+  if (!process.env.RESEND_API_KEY) {
+    return res.status(500).send({ message: 'RESEND_API_KEY is not configured on the server.' });
+  }
+
+  const from = process.env.CONTACT_FROM_EMAIL || 'onboarding@resend.dev';
+  const to = process.env.CONTACT_TO_EMAIL || 'inbox@vinayone.com';
+
+  transporter
+    .sendMail({
+      from,
+      to,
+      replyTo: req.body.email,
+      subject: 'VINAYONE CONTACT MAIL!',
+      html: `<h3>Hi Vinay,</h3><h2>You've New Contact Mail!</h2><br /><p>From: ${req.body.name}<br />Contact Number: ${req.body.contactnumber}<br />Email: ${req.body.email}<br />How found me?: ${req.body.howfoundme}<br />Message: ${req.body.feedback}</p>`
     })
-    res.send({message: 'Success!'})
+    .then(() => {
+      res.send({ message: 'Success!' });
+    })
+    .catch(() => {
+      res.status(500).send({ message: 'Failed to send email.' });
+    });
 });
 
 module.exports = apiRoute;

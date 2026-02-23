@@ -1,6 +1,8 @@
 let express = require('express'),
    path = require('path'),
    bodyParser = require('body-parser');
+
+require('dotenv').config({ path: path.join(__dirname, '.env') });
   
 // Setting up port with express js
 const apiRoute = require('../server/routes/api.route');

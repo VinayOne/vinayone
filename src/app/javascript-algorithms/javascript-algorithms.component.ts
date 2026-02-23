@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-javascript-algorithms',
-  templateUrl: './javascript-algorithms.component.html',
-  styleUrls: ['./javascript-algorithms.component.css']
+    selector: 'app-javascript-algorithms',
+    templateUrl: './javascript-algorithms.component.html',
+    styleUrls: ['./javascript-algorithms.component.css'],
+    standalone: false
 })
 export class JavascriptAlgorithmsComponent implements OnInit {
 
@@ -25,7 +26,7 @@ export class JavascriptAlgorithmsComponent implements OnInit {
 
   javascript_palindrome = `
   function palindrome(str){
-    let regx = /[\W_]/g;
+    let regx = /[\\W_]/g;
     let lowerRegStr = str.toLowerCase().replace(regx, '');
     let reverseStr = lowerRegStr.split('').reverse().join('');
     return reverseStr === lowerRegStr ? "Palindrome!" : "Not a Palindrome!";

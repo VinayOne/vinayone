@@ -1,6 +1,9 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:string";
 // case where behavior is responsive, or with a marker class
 @mixin media-breakpoint-down-or($breakpoint, $name) {
-  #{unquote($name)} {
+  #{string.unquote($name)} {
     @content;
   }
 
@@ -11,7 +14,7 @@
 
 // case where behavior is responsive, or with a marker class
 @mixin media-breakpoint-up-or($breakpoint, $name) {
-  #{unquote($name)} {
+  #{string.unquote($name)} {
     @content;
   }
 
@@ -28,7 +31,7 @@
 //    xs
 //    >> breakpoint-next(sm, $breakpoint-names: (xs sm md))
 //    xs
-@function breakpoint-previous($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
-  $n: index($breakpoint-names, $name);
-  @return if($n > 1, nth($breakpoint-names, $n - 1), null);
+@function breakpoint-previous($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map.keys($breakpoints)) {
+  $n: list.index($breakpoint-names, $name);
+  @return if($n > 1, list.nth($breakpoint-names, $n - 1), null);
 }

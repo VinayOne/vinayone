@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // from bs mixins/buttons button-variant
 @mixin bmd-button-variant($color, $background, $focus-background, $active-background, $border, $focus-border, $active-border) {
   color: $color;
@@ -167,15 +169,15 @@
   // FIXME: SPEC - this should be the 600 color, how can we get that programmatically if at all? Or are we limited to the color palette only?
   $focus-background: contrast-color(
     $background,
-    darken($background, 3%),
-    lighten($background, 3%)
+    color.adjust($background, $lightness: -3%, $space: hsl),
+    color.adjust($background, $lightness: 3%, $space: hsl)
   );
   //$focus-background: darken($background, 10%);  // default bootstrap
-  $focus-border: darken($border, 12%);
+  $focus-border: color.adjust($border, $lightness: -12%, $space: hsl);
 
   $active-background: $focus-background;
   //$active-background: darken($background, 17%);
-  $active-border: darken($border, 25%);
+  $active-border: color.adjust($border, $lightness: -25%, $space: hsl);
 
   @include bmd-button-variant($color,
     $background,
