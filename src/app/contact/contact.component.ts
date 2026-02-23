@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MailService } from "../mail.service";
-import { FormGroup, Validators, FormControl } from "@angular/forms";
+import { UntypedFormGroup, Validators, UntypedFormControl } from "@angular/forms";
 declare var $: any;
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+    selector: 'app-contact',
+    templateUrl: './contact.component.html',
+    styleUrls: ['./contact.component.css'],
+    standalone: false
 })
 export class ContactComponent implements OnInit {
 
   url: any ="https://www.fiverr.com/vinayone_india";
   submitted = false;
-  contactForm: FormGroup;
+  contactForm: UntypedFormGroup;
   options:any = ['Found on Google', 'I followed a link', 'Someone has reffered'];
 
   constructor(private mailservice: MailService) {
@@ -51,12 +52,12 @@ getFiverrProfile(){
 }
 
 mailForm(){
-  this.contactForm = new FormGroup({
-    name : new FormControl('',[Validators.required, Validators.minLength(4)]),
-    contactnumber : new FormControl('',[Validators.required, Validators.minLength(9)]),
-    email : new FormControl('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]),
-    howfoundme : new FormControl('', Validators.required),
-    feedback : new FormControl('', Validators.required)
+  this.contactForm = new UntypedFormGroup({
+    name : new UntypedFormControl('',[Validators.required, Validators.minLength(4)]),
+    contactnumber : new UntypedFormControl('',[Validators.required, Validators.minLength(9)]),
+    email : new UntypedFormControl('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$')]),
+    howfoundme : new UntypedFormControl('', Validators.required),
+    feedback : new UntypedFormControl('', Validators.required)
   });
 }
 
