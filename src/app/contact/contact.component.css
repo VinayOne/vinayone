@@ -1,3 +1,6 @@
 .btn-fiverr{
     background-color: #01B12D !important;
 }
+.mat-mdc-form-field {
+    min-width: 100%;
+}
