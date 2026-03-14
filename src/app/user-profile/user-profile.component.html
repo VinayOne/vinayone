@@ -1,48 +1,102 @@
 <div class="main-content">
   <div class="container-fluid">
-      <div class="row">        
-          <div class="col-md-8">
-              <div class="card card-profile">
-                  <div class="card-avatar">
-                      <a href="javascript:void(0)">
-                          <img class="img" src="./assets/img/faces/vinayone.jpg" />
-                      </a>
-                  </div>
-                  <div class="card-body">
-                      <h2 class="card-category text-gray mobile-category">MEAN Stack | Software Developer</h2>
-                      <h1 class="card-title mobile-title">Vinay Kumar Munda</h1>
-                      <p class="card-discription">
-                        Vinay is having 11+ years of experience in Web Application Development. He worked for various multinational companies like Cisco, Philips & Sapient etc. Vinay works with HTML5, CSS3, JavaScript ES6+, Angular, Node.js, MongoDB, Bootstrap & Angular Material Components. Vinay is having good command in development of various web applications whether static or dynamic, simple or complex or enterprise level applications.
-                      </p>
-                      <a class="btn btn-primary" [routerLink]="['/contact']">Contact</a>
-                      <a href="https://www.fiverr.com/vinayone_india" target="_blank" class="btn btn-primary">Fiverr Profile</a>
-                  </div>
-              </div>
+    <div class="row">
+      <div class="col-lg-8 col-md-7">
+        <div class="card card-profile hero-card">
+          <div class="card-avatar profile-avatar">
+            <a href="javascript:void(0)">
+              <img class="img" src="./assets/img/faces/vinayone.jpg" alt="Vinay Kumar Munda" />
+            </a>
           </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body text-center">
-              <img src="../../assets/img/linkedIn-badge.png" class="img-fluid" alt="Responsive image">
-                  <h3><strong>Vinay Kumar Munda</strong></h3>
-                  <h4>Mean Stack Developer</h4>
-                  <button type="button" class="btn btn-linkedIn" (click)="getlinkedInProfile()">View profile</button><br />
-                  <img src="../../assets/img/linkedin-logo.png" style="width:99px; margin:0 auto 20px auto">
-              </div> 
+          <div class="card-body">
+            <h2 class="card-category text-gray mobile-category hero-subtitle">
+              MEAN Stack Developer | 13+ Years | Angular &middot; Node.js &middot; Next.js &middot; TypeScript
+            </h2>
+            <h1 class="card-title mobile-title">Vinay Kumar Munda</h1>
+            <p class="hero-description">
+              I'm a Senior MEAN Stack Developer with 13+ years of experience building scalable web applications for clients across
+              India, South Africa, the USA, and Japan. I've delivered full-stack solutions for multinational companies including
+              Cisco, Philips Healthcare, Verizon Wireless, and Dubai Electricity &amp; Water Authority - ranging from solo-built
+              platforms to enterprise-grade applications in teams of 12+.
+            </p>
+            <p class="hero-description">
+              My core stack is Angular, Next.js, Node.js, Express.js, TypeScript, and MongoDB. I'm equally comfortable owning
+              the entire stack independently or contributing to large cross-functional teams in Agile environments.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" [routerLink]="['/contact']">Contact Me</a>
+              <button type="button" class="btn btn-primary" (click)="openResume()">View Resume</button>
+              <button type="button" class="btn btn-github" (click)="openGithubProfile()">GitHub</button>
+            </div>
           </div>
-          </div>
+        </div>
       </div>
-	  <div class="row">
-			<div class="col-md-8">&nbsp;</div>
-			<div class="col-md-4">
-				<!-- <div class="card">
-              <div class="card-body">
-				 Put this code anywhere in the body of your page where you want the badge to show up. 
 
-			<div [innerHTML]="fiverr_profile"></div>
+      <div class="col-lg-4 col-md-5">
+        <div class="card professional-card">
+          <div class="card-body text-center">
+            <img src="./assets/img/faces/vinayone.jpg" class="img-fluid professional-avatar" alt="Vinay Kumar Munda profile" />
+            <h3><strong>Vinay Kumar Munda</strong></h3>
+            <h4>Senior MEAN Stack Developer</h4>
+            <p class="profile-meta">13+ Years Experience &middot; Bangalore, India</p>
 
-			  </div> 
-			  </div> -->
-			</div>
-	  </div>
+            <button type="button" class="btn btn-primary btn-block" (click)="openResumePdf()">Download Resume</button>
+
+            <div class="profile-links">
+              <button type="button" class="btn btn-linkedin" (click)="openLinkedInProfile()">LinkedIn</button>
+              <button type="button" class="btn btn-github" (click)="openGithubProfile()">GitHub</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card featured-projects-card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">Featured Projects</h4>
+            <p class="card-category">Recent work snapshots directly from delivery experience.</p>
+          </div>
+          <div class="card-body">
+            <div class="row project-grid">
+              <div class="col-lg-4 col-md-6">
+                <div class="project-tile">
+                  <h5>Dubai Electricity &amp; Water Authority (DEWA)</h5>
+                  <p>Enterprise front-end delivery for high-traffic utility workflows and internal operations modules.</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="project-tile">
+                  <h5>Pincode.Directory</h5>
+                  <p>SEO-focused full-stack platform built and maintained independently for nationwide postal search.</p>
+                  <a href="https://pincode.directory" target="_blank" rel="noopener noreferrer">Visit project</a>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12">
+                <div class="project-tile">
+                  <h5>ShareSafe</h5>
+                  <p>Secure document collaboration workflow with role-based access and file lifecycle controls.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card freelance-card">
+          <div class="card-body">
+            <div>
+              <h4 class="card-title">Hire Me / Freelance</h4>
+              <p class="card-category">Available for selected freelance assignments, MVP builds, and Angular/Node.js consulting.</p>
+            </div>
+            <button type="button" class="btn btn-fiverr" (click)="openFiverrProfile()">View Fiverr Gigs</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,70 +1,147 @@
-<div class="main-content">
+<div class="main-content contact-page">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title">Contact Vinay</h4>
-            <p class="card-category">Send a project requirement or your feedback.</p>
+      <div class="col-lg-8 col-md-12">
+        <div class="card contact-form-card">
+          <div class="contact-form-header">
+            <p class="eyebrow">Let's connect</p>
+            <h4>Tell me about your project, role, or collaboration idea</h4>
+            <p>I usually respond quickly for product builds, freelance work, and full-time opportunities.</p>
+            <div class="feature-pills">
+              <span>Angular / Next.js</span>
+              <span>Node.js / Express.js</span>
+              <span>Full-Stack Delivery</span>
+            </div>
           </div>
+
           <div class="card-body">
-            <form novalidate [formGroup]="contactForm" id="contact-form" (ngSubmit)="onSubmit()">
+            <form novalidate [formGroup]="contactForm" id="contact-form" class="modern-contact-form" (ngSubmit)="onSubmit()">
               <div class="row">
                 <div class="col-md-6">
-                  <mat-form-field class="example-full-width" appearance="outline">
-                    <input matInput placeholder="Name" formControlName="name" type="text">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Your Name</mat-label>
+                    <span matPrefix class="material-icons input-icon">person</span>
+                    <input matInput formControlName="name" type="text" autocomplete="name">
+                    @if (submitted && contactForm.controls['name'].invalid) {
+                      <mat-error>Please enter at least 4 characters.</mat-error>
+                    }
                   </mat-form-field>
                 </div>
+
                 <div class="col-md-6">
-                  <mat-form-field class="example-full-width" appearance="outline">
-                    <input matInput placeholder="Contact Number" formControlName="contactnumber" type="tel">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Contact Number</mat-label>
+                    <span matPrefix class="material-icons input-icon">phone</span>
+                    <input matInput formControlName="contactnumber" type="tel" autocomplete="tel">
+                    @if (submitted && contactForm.controls['contactnumber'].invalid) {
+                      <mat-error>Please enter a valid contact number.</mat-error>
+                    }
                   </mat-form-field>
                 </div>
               </div>
+
               <div class="row">
                 <div class="col-md-6">
-                  <mat-form-field class="example-full-width" appearance="outline">
-                    <input matInput placeholder="Email" formControlName="email" type="email">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Email Address</mat-label>
+                    <span matPrefix class="material-icons input-icon">alternate_email</span>
+                    <input matInput formControlName="email" type="email" autocomplete="email">
+                    @if (submitted && contactForm.controls['email'].invalid) {
+                      <mat-error>Please enter a valid email address.</mat-error>
+                    }
                   </mat-form-field>
                 </div>
+
                 <div class="col-md-6">
-                  <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-select placeholder="How you found me? (Select one)" formControlName="howfoundme">
+                  <mat-form-field appearance="outline">
+                    <mat-label>How did you find me?</mat-label>
+                    <span matPrefix class="material-icons input-icon">explore</span>
+                    <mat-select formControlName="howfoundme">
                       @for (opt of options; track opt) {
-                        <mat-option value="{{opt}}">{{opt}}</mat-option>
+                        <mat-option [value]="opt">{{ opt }}</mat-option>
                       }
                     </mat-select>
+                    @if (submitted && contactForm.controls['howfoundme'].invalid) {
+                      <mat-error>Please select an option.</mat-error>
+                    }
                   </mat-form-field>
                 </div>
               </div>
+
               <div class="row">
                 <div class="col-md-12">
-                  <div class="form-group">
-                    <div class="form-group">
-                      <label class="bmd-label-floating"> Your Query or Feedback</label>
-                      <textarea class="form-control" rows="5" formControlName="feedback"></textarea>
-                    </div>
-                  </div>
+                  <mat-form-field appearance="outline" class="message-field">
+                    <mat-label>Your Query or Feedback</mat-label>
+                    <textarea matInput rows="6" formControlName="feedback" placeholder="Share your requirement, timeline, and expected outcomes."></textarea>
+                    @if (submitted && contactForm.controls['feedback'].invalid) {
+                      <mat-error>Please add your message.</mat-error>
+                    }
+                  </mat-form-field>
                 </div>
               </div>
-              <span class="text-primary">Email: info&#64;vinayone.com</span>
-              <button mat-raised-button type="submit" class="btn btn-primary pull-right" [disabled]="contactForm.invalid">Send</button>
-              <div class="clearfix"></div>
+
+              <div class="form-footer">
+                <div class="contact-chip">
+                  <i class="material-icons">mail_outline</i>
+                  <span>inbox&#64;vinayone.com</span>
+                </div>
+                <button mat-raised-button type="submit" class="btn btn-primary send-btn" [disabled]="contactForm.invalid">
+                  <i class="material-icons">send</i>
+                  Send Message
+                </button>
+              </div>
             </form>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card">
+
+      <div class="col-lg-4 col-md-12">
+        <div class="card contact-info-card">
+          <div class="card-body">
+            <p class="eyebrow">Direct Contact</p>
+            <h4>Prefer a quick intro first?</h4>
+            <ul class="info-list">
+              <li>
+                <i class="material-icons">mail</i>
+                <a href="mailto:inbox@vinayone.com">inbox&#64;vinayone.com</a>
+              </li>
+              <li>
+                <i class="material-icons">phone</i>
+                <a href="tel:+919333393383">+91 9333393383</a>
+              </li>
+              <li>
+                <i class="material-icons">forum</i>
+                <a [href]="whatsAppUrl" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+              </li>
+              <li>
+                <i class="material-icons">location_on</i>
+                <span>Bangalore, India</span>
+              </li>
+            </ul>
+
+            <div class="social-actions">
+              <a class="btn btn-linkedin" [href]="linkedInUrl" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="btn btn-github" [href]="githubUrl" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+
+            <div class="chat-action">
+              <button type="button" mat-raised-button class="btn btn-whatsapp" (click)="openWhatsAppChat()">
+                <i class="material-icons">forum</i>
+                WhatsApp Chat
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card freelance-card">
           <div class="card-body text-center">
-            <img src="../../assets/img/fiverr-profile.png" class="img-fluid" alt="Responsive image">
-            <h3><strong>Seller</strong></h3>
-            <h4>Programming & Tech</h4>
-            <button type="button" mat-raised-button class="btn btn-fiverr" (click)="getFiverrProfile()">Check out my Gigs</button>
+            <img src="../../assets/img/fiverr-profile-new.png" class="img-fluid" alt="Fiverr profile" />
+            <h4>Freelance Services</h4>
+            <p>For quick MVP builds, feature enhancements, and consulting tasks.</p>
+            <button type="button" mat-raised-button class="btn btn-fiverr" (click)="getFiverrProfile()">Check Out My Fiverr Gigs</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
