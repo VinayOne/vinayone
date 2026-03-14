@@ -10,22 +10,28 @@ declare var $: any;
 })
 export class ContactComponent implements OnInit {
 
-  url: any ="https://www.fiverr.com/vinayone_india";
+  url = 'https://www.fiverr.com/vinayone_india';
+  linkedInUrl = 'https://www.linkedin.com/in/vinayone/';
+  githubUrl = 'https://github.com/VinayOne';
+  whatsAppNumber = '919333393383';
+  whatsAppMessage = 'Hi Vinay, I visited your portfolio and would like to discuss an opportunity.';
+  whatsAppUrl = `https://wa.me/${this.whatsAppNumber}?text=${encodeURIComponent(this.whatsAppMessage)}`;
   submitted = false;
   contactForm: UntypedFormGroup;
-  options:any = ['Found on Google', 'I followed a link', 'Someone has reffered'];
+  options: string[] = [
+    'Found on Google',
+    'I followed a link',
+    'From LinkedIn or GitHub',
+    'Someone referred me'
+  ];
 
   constructor(private mailservice: MailService) {
     this.mailForm();
    }
   showNotification(from, align){
-    const type = ['','info','success','warning','danger'];
-
-    const color = Math.floor((Math.random() * 4) + 1);
-
     $.notify({
         icon: "notifications",
-        message: "SUCESS - Your message sent!"
+        message: "SUCCESS - Your message sent!"
 
     },{
         type: "primary",
@@ -48,7 +54,11 @@ export class ContactComponent implements OnInit {
 }
 
 getFiverrProfile(){
-  window.open(this.url,'_blank');
+  window.open(this.url, '_blank', 'noopener,noreferrer');
+}
+
+openWhatsAppChat(){
+  window.open(this.whatsAppUrl, '_blank', 'noopener,noreferrer');
 }
 
 mailForm(){

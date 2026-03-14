@@ -1,0 +1,55 @@
+.experience-table table {
+    min-width: 980px;
+}
+
+.company-location {
+    margin: 2px 0 0;
+    color: #7b8794;
+    font-size: 0.82rem;
+}
+
+.experience-points,
+.project-points {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.experience-points li,
+.project-points li {
+    margin-bottom: 6px;
+    line-height: 1.55;
+    color: #3c4858;
+}
+
+.info-card {
+    height: calc(100% - 20px);
+}
+
+.tag-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.tag-grid span {
+    border: 1px solid #dfdfdf;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #4d5864;
+    background: #fafafa;
+}
+
+.footprint-note {
+    margin-bottom: 0;
+    color: #606c76;
+    line-height: 1.7;
+}
+
+@media (max-width: 991px) {
+    .info-card {
+        height: auto;
+    }
+}

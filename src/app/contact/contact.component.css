@@ -1,6 +1,296 @@
-.btn-fiverr{
-    background-color: #01B12D !important;
+.contact-page .container-fluid {
+    position: relative;
 }
-.mat-mdc-form-field {
-    min-width: 100%;
+
+.contact-form-card,
+.contact-info-card,
+.freelance-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(18, 30, 50, 0.08);
+}
+
+.contact-form-header {
+    padding: 28px 28px 22px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #1f2937 0%, #334155 55%, #4c1d95 100%);
+}
+
+.contact-form-header h4 {
+    margin: 0 0 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.contact-form-header p {
+    margin: 0;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.feature-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.feature-pills span {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 999px;
+    padding: 5px 10px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.modern-contact-form {
+    padding-top: 6px;
+}
+
+.modern-contact-form .mat-mdc-form-field {
+    width: 100%;
+}
+
+.modern-contact-form .message-field {
+    margin-top: 2px;
+}
+
+.input-icon {
+    font-size: 19px;
+    width: 19px;
+    height: 19px;
+    color: #64748b;
+}
+
+:host ::ng-deep .modern-contact-form .mat-mdc-text-field-wrapper {
+    border-radius: 12px;
+    background: #f8fafc;
+}
+
+:host ::ng-deep .modern-contact-form .mat-mdc-form-field-icon-prefix {
+    color: #64748b;
+    padding-right: 8px;
+}
+
+:host ::ng-deep .modern-contact-form .mat-mdc-form-field-subscript-wrapper {
+    margin-top: 2px;
+}
+
+.form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.contact-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #dbe3ef;
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-weight: 600;
+    color: #495468;
+    background: #f8fafc;
+}
+
+.contact-chip i {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.send-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0 20px;
+    min-height: 42px;
+}
+
+.send-btn i {
+    font-size: 19px;
+    width: 19px;
+    height: 19px;
+}
+
+.contact-info-card .card-body,
+.freelance-card .card-body {
+    padding: 24px;
+}
+
+.contact-info-card h4 {
+    margin-bottom: 16px;
+}
+
+.info-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.info-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #3d4a5c;
+    font-weight: 500;
+}
+
+.info-list li i {
+    color: #4f46e5;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.info-list a {
+    color: #2a3a52;
+}
+
+.social-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.chat-action {
+    margin-top: 10px;
+}
+
+.social-actions .btn {
+    margin: 0;
+    flex: 1;
+}
+
+.btn-linkedin {
+    border: 1px solid #0a66c2;
+    color: #0a66c2;
+    background: #ffffff;
+}
+
+.btn-linkedin:hover,
+.btn-linkedin:focus {
+    background: #0a66c2;
+    color: #ffffff;
+}
+
+.btn-github {
+    border: 1px solid #24292e;
+    color: #24292e;
+    background: #ffffff;
+}
+
+.btn-github:hover,
+.btn-github:focus {
+    background: #24292e;
+    color: #ffffff;
+}
+
+.btn-whatsapp {
+    margin: 0;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #25d366 !important;
+    color: #ffffff;
+}
+
+.btn-whatsapp i {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.btn-whatsapp:hover,
+.btn-whatsapp:focus {
+    background: #1ebc59 !important;
+    color: #ffffff;
+}
+
+.freelance-card {
+    margin-top: 16px;
+    background: linear-gradient(165deg, #f7fffb 0%, #effbf5 50%, #f8fffd 100%);
+}
+
+.freelance-card img {
+    max-height: 150px;
+    margin-bottom: 12px;
+}
+
+.freelance-card h4 {
+    margin-bottom: 6px;
+}
+
+.freelance-card p {
+    color: #526273;
+    margin-bottom: 14px;
+}
+
+.btn-fiverr {
+    margin: 0;
+    background-color: #01b12d !important;
+    color: #ffffff;
+}
+
+.btn-fiverr:hover,
+.btn-fiverr:focus {
+    background-color: #029e29 !important;
+    color: #ffffff;
+}
+
+@media (max-width: 991px) {
+    .contact-form-card,
+    .contact-info-card,
+    .freelance-card {
+        border-radius: 14px;
+    }
+
+    .contact-info-card {
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-form-header {
+        padding: 22px 20px 18px;
+    }
+
+    .contact-form-header h4 {
+        font-size: 1.2rem;
+    }
+
+    .form-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .send-btn,
+    .social-actions .btn,
+    .btn-whatsapp,
+    .btn-fiverr {
+        width: 100%;
+    }
+
+    .social-actions {
+        width: 100%;
+        flex-direction: column;
+    }
 }
