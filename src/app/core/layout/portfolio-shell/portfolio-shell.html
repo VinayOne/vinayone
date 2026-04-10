@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <div
+    class="sidebar"
+    [attr.data-color]="layout.sidebarColor()"
+    data-background-color="white"
+    [attr.data-image]="layout.sidebarImage()"
+  >
+    <app-sidebar [items]="navItems"></app-sidebar>
+    <div
+      class="sidebar-background"
+      [style.background-image]="'url(' + layout.sidebarImage() + ')'"
+    ></div>
+  </div>
+
+  <div class="main-panel">
+    <app-navbar [title]="pageTitle()" (menuToggle)="toggleMobileMenu()"></app-navbar>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+
+    @if (layout.mobileMenuOpen()) {
+      <button
+        type="button"
+        class="close-layer visible"
+        aria-label="Close mobile menu"
+        (click)="layout.closeMobileMenu()"
+      ></button>
+    }
+  </div>
+</div>
